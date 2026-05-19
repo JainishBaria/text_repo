@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Form</title>
+  <style>
+    body{
+      background-image:url("girasoles.jpg");
+      background-size: 1500px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Job Application Form</h1>
+  <p>Please fill out the form.</p>
+
+  <hr />
+
+  <form
+    action="/submit"
+    method="POST"
+    enctype="multipart/form-data"
+    autocomplete="on"
+    novalidate
+    target="_blank"
+  >
+
+    <input type="hidden" name="form_id"/>
+
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="name">Full Name </label><br />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="e.g Kunal Kamra"
+        minlength="3"
+        maxlength="50"
+        autocomplete="name"
+        autofocus
+        required
+      />
+      <br /><br />
+
+      <label for="email">Email Address </label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="xyz@gmail.com"
+        autocomplete="email"
+        required
+      />
+      <br /><br />
+
+      <label for="password">Create Password </label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="6"
+        maxlength="20"
+        placeholder="Min 6 characters"
+        required
+      />
+      <br /><br />
+
+      <label for="phone">Phone Number</label><br />
+      <input
+        type="number"
+        id="phone"
+        name="phone"
+        placeholder="9876543210"
+      />
+      <br /><br />
+
+      <label for="website">Portfolio / Website</label><br />
+      <input
+        type="url"
+        id="website"
+        name="website"
+        placeholder="https://yourportfolio.com"
+        autocomplete="url"
+      />
+      <br /><br />
+
+      <label for="search">Search Your Nearest Office</label><br />
+      <input
+        type="search"
+        id="search"
+        name="search"
+        placeholder="Type city or location..."
+      />
+
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>Age &amp; Experience</legend>
+
+      <label for="age">Your Age</label><br />
+      <input
+        type="number"
+        id="age"
+        name="age"
+        min="18"
+        max="65"
+        value="22"
+      />
+      <br /><br />
+
+      <label for="experience_level">Years of Experience</label><br />
+      <input
+        type="range"
+        id="experience_level"
+        name="experience_level"
+        min="0"
+        max="20"
+        value="2"
+      />
+      <small> 0 - 20 years</small>
+
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>Availability & Schedule</legend>
+
+      <label for="start_date">Available From</label><br />
+      <input
+        type="date"
+        id="start_date"
+        name="start_date"
+      />
+      <br /><br />
+
+      <label for="preferred_time">Preferred Interview Time</label><br />
+      <input
+        type="time"
+        id="preferred_time"
+        name="preferred_time"
+        min="09:00"
+        max="18:00"
+      />
+      <br /><br />
+
+      <label for="interview_slot">Pick Interview Slot</label><br />
+      <input
+        type="datetime-local"
+        id="interview_slot"
+        name="interview_slot"
+      />
+      <br /><br />
+
+      <label for="joining_month">Preferred Joining Month</label><br />
+      <input
+        type="month"
+        id="joining_month"
+        name="joining_month"
+      />
+      <br /><br />
+
+      <label for="training_week">Preferred Training Week</label><br />
+      <input
+        type="week"
+        id="training_week"
+        name="training_week"
+      />
+
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>Preferences & Skills</legend>
+
+      <p><strong>Gender</strong></p>
+
+      <input type="radio" id="male"   name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label>
+
+      <br /><br />
+
+      <p><strong>Technical Skills </strong></p>
+
+      <input type="checkbox" id="html"   name="skills" value="HTML"       checked />
+      <label for="html">HTML</label>
+      &nbsp;
+      <input type="checkbox" id="css"    name="skills" value="CSS" />
+      <label for="css">CSS</label>
+      &nbsp;
+      <input type="checkbox" id="js"     name="skills" value="JavaScript" />
+      <label for="js">JavaScript</label>
+      &nbsp;
+      <input type="checkbox" id="python" name="skills" value="Python" />
+      <label for="python">Python</label>
+      &nbsp;
+      <input type="checkbox" id="sql"    name="skills" value="SQL" />
+      <label for="sql">SQL</label>
+
+      <br /><br />
+
+      <label for="office">Preferred Office Location</label><br />
+      <select id="office" name="office">
+          <option value="mumbai" selected>Mumbai</option>
+          <option value="ahmedabad">Ahmedabad</option>
+          <option value="vadodara">Vadodara</option>
+        
+      </select>
+
+      <br /><br />
+
+      <label for="languages">Languages You Speak</label><br />
+      <select id="languages" name="languages" multiple size="4">
+        <option value="english" selected>English</option>
+        <option value="hindi">Hindi</option>
+        <option value="gujarati">Gujarati</option>
+        <option value="marathi">Marathi</option>
+        <option value="tamil">Tamil</option>
+      </select>
+      <br />
+      <small>Hold Ctrl / Cmd to select more.</small>
+
+      <br /><br />
+
+      <label for="referral">How did you hear about us?</label><br />
+      <input list="referral_sources" id="referral" name="referral" placeholder="Type or pick an option..." />
+      <datalist id="referral_sources">
+        <option value="LinkedIn" />
+        <option value="Indeed" />
+        <option value="Company Website" />
+      </datalist>
+
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>Documents & Personalisation</legend>
+
+      <label for="resume">Upload Your Resume (PDF or Word)</label><br />
+      <input
+        type="file"
+        id="resume"
+        name="resume"
+        multiple
+      />
+      <br /><br />
+
+      <label for="avatar">Upload a Profile Photo</label><br />
+      <input
+        type="file"
+        id="avatar"
+        name="avatar"
+      />
+      <br /><br />
+
+      <label for="theme_color">Pick Your Profile Theme Colour</label><br />
+      <input
+        type="color"
+        id="theme_color"
+        name="theme_color"
+        value="#1a73e8"
+      />
+
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>About You</legend>
+
+      <label for="bio">Write a Short Bio *</label><br />
+      <textarea
+        id="bio"
+        name="bio"
+        rows="4"
+        cols="55"
+        minlength="10"
+        maxlength="500"
+        placeholder="Tell us a little about yourself, your goals and what drives you..."
+        required
+      ></textarea>
+
+      <br /><br />
+
+      <label for="extra_notes">Any Additional Notes</label><br />
+      <textarea
+        id="extra_notes"
+        name="extra_notes"
+        rows="2"
+        cols="55"
+        disabled
+      >This section is currently closed for input.</textarea>
+
+    </fieldset>
+
+    <br />
+    <br />
+
+    <fieldset>
+      <legend>Submit Your Application</legend>
+
+      <button type="submit">Submit Application</button>
+      <button type="reset">Clear Form</button>
+      <br /><br />
+
+    </fieldset>
+  </form>
+
+  <video controls autoplay loop muted >
+    <source src="Example_video.mp4" type="video/mp4">
+
+  </video>
+  <audio controls >
+    <source src="Example_audio.mp3" type="audio/mp3">
+  </audio>
+  <br>
+    <iframe
+    src="https://www.youtube.com/embed/4OXqKZIIEtc?si=I2rvXdH7vHT_SVu0" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+
+  <hr />
+
+</body>
+</html>
